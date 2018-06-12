@@ -41,7 +41,7 @@ class ventana(wx.Frame):
 
      #metodo para logearse
     def login(self,event,user,password):
-        import pypyodbc,contra
+        import pypyodbc
         con=pypyodbc.connect("Driver={ODBC Driver 17 for SQL Server};server=localhost;database=db;uid=sa;pwd=YOUR_PASSWORD")
         cursor=con.cursor()
         query=f"select nombre,contra from usuarios where nombre='{user}' and contra='{password}'"
